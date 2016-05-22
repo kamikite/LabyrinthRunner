@@ -45,10 +45,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Studienleistung\Scripts\Bomb.cs" />
      <Compile Include="Assets\Studienleistung\Scripts\Door.cs" />
      <Compile Include="Assets\Studienleistung\Scripts\DoorTrigger.cs" />
+     <Compile Include="Assets\Studienleistung\Scripts\EndSceneManager.cs" />
+     <Compile Include="Assets\Studienleistung\Scripts\GuiManager.cs" />
      <Compile Include="Assets\Studienleistung\Scripts\PlayerInputManager.cs" />
      <Compile Include="Assets\Studienleistung\Scripts\PlayerManager.cs" />
+     <Compile Include="Assets\Studienleistung\Scripts\SceneManager.cs" />
+     <Compile Include="Assets\Studienleistung\Scripts\WinTrigger.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

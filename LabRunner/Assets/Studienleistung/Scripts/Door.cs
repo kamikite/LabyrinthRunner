@@ -22,7 +22,7 @@ public class Door : MonoBehaviour {
                 transform.Translate(Vector3.down * Time.deltaTime);
             }
         } else {
-            if (transform.position.y <= 3) {
+            if (transform.position.y < 3) {
                 transform.Translate(Vector3.up * Time.deltaTime);
             }
         }

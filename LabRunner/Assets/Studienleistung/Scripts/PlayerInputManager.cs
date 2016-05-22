@@ -48,8 +48,7 @@ public class PlayerInputManager : MonoBehaviour {
         Rotate();
     }
 
-	// Use this for initialization
-	void Start () {
+	public void Init() {
         m_inputMovementAxisName = "Vertical";
         m_inputRotationAxisName = "Horizontal";
         
@@ -59,8 +58,4 @@ public class PlayerInputManager : MonoBehaviour {
         m_rigidbody = GetComponent<Rigidbody>();
 	}
 	
-	// Update is called once per frame
-	void Update () {
-	
-	}
 }

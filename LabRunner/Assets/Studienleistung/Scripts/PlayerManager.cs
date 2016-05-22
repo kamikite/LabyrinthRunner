@@ -3,56 +3,49 @@ using System.Collections;
 
 public class PlayerManager : MonoBehaviour {
 
-    public Transform spawnPoint;
-    public GameObject prefabPlayer;
-    private float m_healthPoints;
-    private PlayerInputManager inputManager;
-    private GameObject Player;
     private float m_maxSpeed;
-    private Rigidbody PlayerRigidBody;
+    private float m_healthPoints;
 
+    private GameObject Player;
+    private PlayerInputManager InputManager;
+    private PlayerManager Manager;
+    private Transform spawnPoint;
+    private SceneManager sceneManager;
+
+ 
     public float HealthPoint
     {
         get {   return m_healthPoints;      }
         set {   m_healthPoints = value;     }
     }
 
-    public void OnEnable() {
-        GameObject obj = Instantiate(prefabPlayer, spawnPoint.position, spawnPoint.rotation) as GameObject;
-        obj.name = "PlayerFigure";
-        Player = GameObject.Find("PlayerFigure");
-        PlayerRigidBody = Player.GetComponent<Rigidbody>();
-        inputManager = Player.GetComponent<PlayerInputManager>();
-        m_healthPoints = 100;
-        m_maxSpeed = inputManager.speedBoost;
-    }
+    public void Init(GameObject playerObj, Transform spawnObj,  PlayerManager managerObj, PlayerInputManager inputObj, SceneManager scManager) {
 
-    private void CheckDeath() {
-        if (m_healthPoints <= 0){
-            PlayerRigidBody.MovePosition(spawnPoint.position);
-            PlayerRigidBody.MoveRotation(spawnPoint.rotation);
-        }
+        m_healthPoints = 100;
+
+        this.Player = playerObj;
+        this.InputManager = inputObj;
+        this.Manager = managerObj;
+        this.spawnPoint = spawnObj;
+        this.sceneManager = scManager;
+
+        m_maxSpeed = InputManager.speedBoost;
+        
+        InputManager.Init();
+  
     }
 
     private void UpdateSpeed() {
-        if (inputManager.speedBoost < 0){
-            inputManager.speedBoost = 0;
+
+        if (InputManager.speedBoost < 0){
+            InputManager.speedBoost = 0;
         } else {
-            inputManager.speedBoost = m_maxSpeed * (m_healthPoints / 100);
+            InputManager.speedBoost = m_maxSpeed * (m_healthPoints / 100);
         }
     }
 
-	// Use this for initialization
-	void Start () {
-
-	}
-	
-	// Update is called once per frame
-	void Update () {
+    void FixedUpdate()
+    {
         UpdateSpeed();
-	}
-
-    void FixedUpdate () {
-   
     }
 }
