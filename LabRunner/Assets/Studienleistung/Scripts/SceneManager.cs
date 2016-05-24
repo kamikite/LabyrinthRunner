@@ -22,7 +22,6 @@ public class SceneManager : MonoBehaviour {
     {
         GameObject obj = Instantiate(prefabPlayer, spawnPoint.position, spawnPoint.rotation) as GameObject;
         obj.name = "PlayerFigure";
-        //Getting Player reference
         Manager = obj.GetComponent<PlayerManager>();
         InputManager = obj.GetComponent<PlayerInputManager>();
         PlayerRigidBody = obj.GetComponent<Rigidbody>();
@@ -36,27 +35,6 @@ public class SceneManager : MonoBehaviour {
         }
     }
 
-    /*unused, need doorReset
-    public void restartScene()
-    {
-        PlayerRigidBody.MovePosition(spawnPoint.position);
-        PlayerRigidBody.MoveRotation(spawnPoint.rotation);
-        Manager.HealthPoint = 100;
-
-        for (int i = 0; i < spawnBomb.Length; i++)
-        {
-            if (GameObject.Find("Bomb" + i) != null){
-                Destroy(GameObject.Find("Bomb" + i)); 
-            }
-        }
-        for (int i = 0; i < spawnBomb.Length; i++)
-        {
-            GameObject bomb = Instantiate(prefabBomb, spawnBomb[i].position, spawnBomb[i].rotation) as GameObject;
-            bomb.name = "Bomb" + i;
-        }
-        
-    }
-     */
     private void CheckDeath()
     {
         if (Manager.HealthPoint <= 0)
