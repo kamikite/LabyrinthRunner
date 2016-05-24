@@ -26,7 +26,7 @@ public class Bomb : MonoBehaviour {
 
     void OnEnable()
     {
-        bombDMG = 10;
+        bombDMG = 30;
         bombSound = GetComponent<AudioSource>();
 
     }

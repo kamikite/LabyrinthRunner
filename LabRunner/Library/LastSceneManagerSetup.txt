@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Studienleistung/StartScene.unity
+- path: Assets/Studienleistung/EndScene.unity
   isLoaded: 1
   isActive: 1

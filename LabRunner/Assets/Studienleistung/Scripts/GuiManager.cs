@@ -13,6 +13,7 @@ public class GuiManager : MonoBehaviour {
     void OnEnable()
     {
         sceneManager = GameObject.Find("SceneManager").GetComponent<SceneManager>();
+        DontDestroyOnLoad(this);
         disableWin();
     }
     void disableWin()

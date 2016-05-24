@@ -20,6 +20,7 @@ public class WinTrigger : MonoBehaviour {
         if (col.name == "PlayerFigure")
         {
             guiManager.winText.text = "YOU WON!";
+            guiManager.healthPointsText.text = "";
             StartCoroutine(WaitingToSwitch());
             Debug.Log("You won!");
          

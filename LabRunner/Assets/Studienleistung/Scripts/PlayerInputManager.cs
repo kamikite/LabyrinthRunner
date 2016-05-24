@@ -29,7 +29,7 @@ public class PlayerInputManager : MonoBehaviour {
     private void Move()
     {
         m_inputMovement = Input.GetAxis(m_inputMovementAxisName);
-        Vector3 movement = transform.forward * speedBoost * m_inputMovement * Time.deltaTime;
+        Vector3 movement = transform.forward * m_speedBoost * m_inputMovement * Time.deltaTime;
         m_rigidbody.MovePosition(m_rigidbody.position + movement);
     }
 
@@ -37,7 +37,7 @@ public class PlayerInputManager : MonoBehaviour {
     {
         m_inputRotation = Input.GetAxis(m_inputRotationAxisName);
 
-        float turn = m_inputRotation * rotationSpeed * Time.deltaTime;
+        float turn = m_inputRotation * m_rotationSpeed * Time.deltaTime;
         Quaternion turnRotation = Quaternion.Euler(0f, turn, 0f);
         m_rigidbody.MoveRotation(m_rigidbody.rotation * turnRotation);
 
@@ -52,8 +52,8 @@ public class PlayerInputManager : MonoBehaviour {
         m_inputMovementAxisName = "Vertical";
         m_inputRotationAxisName = "Horizontal";
         
-        rotationSpeed = 180;
-        speedBoost = 5;
+        m_rotationSpeed = 180;
+        m_speedBoost = 5;
 
         m_rigidbody = GetComponent<Rigidbody>();
 	}
