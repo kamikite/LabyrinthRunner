@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class WinTrigger : MonoBehaviour {
     private GuiManager guiManager;
@@ -12,7 +13,7 @@ public class WinTrigger : MonoBehaviour {
             yield return new WaitForSeconds(5.0f);
             waiting = false;
         }
-        Application.LoadLevel(1);
+        SceneManager.LoadScene(1);
     }
 
     void OnTriggerEnter(Collider col)

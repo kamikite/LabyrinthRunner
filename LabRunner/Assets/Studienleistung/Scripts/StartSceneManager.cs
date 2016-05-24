@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class SceneManager : MonoBehaviour {
+public class StartSceneManager : MonoBehaviour {
     public Transform spawnPoint;
     public GameObject prefabPlayer;
     public Transform [] spawnBomb ;

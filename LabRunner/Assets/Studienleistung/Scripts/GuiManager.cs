@@ -8,11 +8,11 @@ public class GuiManager : MonoBehaviour {
     public Text infoText;
     public Text winText;
 
-    private SceneManager sceneManager;
+    private StartSceneManager sceneManager;
 
     void OnEnable()
     {
-        sceneManager = GameObject.Find("SceneManager").GetComponent<SceneManager>();
+        sceneManager = GameObject.Find("SceneManager").GetComponent<StartSceneManager>();
         DontDestroyOnLoad(this);
         disableWin();
     }

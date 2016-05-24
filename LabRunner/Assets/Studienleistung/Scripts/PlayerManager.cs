@@ -10,7 +10,8 @@ public class PlayerManager : MonoBehaviour {
     private PlayerInputManager InputManager;
     private PlayerManager Manager;
     private Transform spawnPoint;
-    private SceneManager sceneManager;
+    private StartSceneManager sceneManager;
+
 
  
     public float HealthPoint
@@ -19,7 +20,7 @@ public class PlayerManager : MonoBehaviour {
         set {   m_healthPoints = value;     }
     }
 
-    public void Init(GameObject playerObj, Transform spawnObj,  PlayerManager managerObj, PlayerInputManager inputObj, SceneManager scManager) {
+    public void Init(GameObject playerObj, Transform spawnObj,  PlayerManager managerObj, PlayerInputManager inputObj, StartSceneManager scManager) {
 
         m_healthPoints = 100;
 
