@@ -5,6 +5,7 @@ using System.Collections;
 public class EndSceneManager : MonoBehaviour {
 
     public Button restartButton;
+    public Text infoText;
 	// Use this for initialization
 	void OnEnable () {
         restartButton.onClick.AddListener(() =>
@@ -12,4 +13,9 @@ public class EndSceneManager : MonoBehaviour {
             Application.LoadLevel(0);
         });
 	}
+
+    public void Init(string msg)
+    {
+        infoText.text = msg;
+    }
 }

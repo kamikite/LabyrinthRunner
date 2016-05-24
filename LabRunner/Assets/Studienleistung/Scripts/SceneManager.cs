@@ -35,6 +35,8 @@ public class SceneManager : MonoBehaviour {
             bomb.name = "Bomb" + i;
         }
     }
+
+    /*unused, need doorReset
     public void restartScene()
     {
         PlayerRigidBody.MovePosition(spawnPoint.position);
@@ -47,7 +49,6 @@ public class SceneManager : MonoBehaviour {
                 Destroy(GameObject.Find("Bomb" + i)); 
             }
         }
-
         for (int i = 0; i < spawnBomb.Length; i++)
         {
             GameObject bomb = Instantiate(prefabBomb, spawnBomb[i].position, spawnBomb[i].rotation) as GameObject;
@@ -55,6 +56,7 @@ public class SceneManager : MonoBehaviour {
         }
         
     }
+     */
     private void CheckDeath()
     {
         if (Manager.HealthPoint <= 0)

@@ -4,7 +4,14 @@ using System.Collections;
 public class Bomb : MonoBehaviour {
     private PlayerManager Player;
     private float bombDMG;
-    
+    private AudioSource bombSound;
+
+    public float BombDMG
+    {
+        get { return bombDMG; }
+        set { bombDMG = value; }
+    }
+
     void OnCollisionEnter(Collision col)
     {
 
@@ -12,7 +19,7 @@ public class Bomb : MonoBehaviour {
         {
             Player = col.gameObject.GetComponent<PlayerManager>();
             Player.HealthPoint -= bombDMG;
-            Debug.Log("Boooom! Aua! + " + Player.HealthPoint); 
+            Debug.Log("Boooom! Aua!" + Player.HealthPoint);
             Destroy(this.gameObject); 
         }
     }
@@ -20,6 +27,8 @@ public class Bomb : MonoBehaviour {
     void OnEnable()
     {
         bombDMG = 10;
+        bombSound = GetComponent<AudioSource>();
+
     }
 
 }

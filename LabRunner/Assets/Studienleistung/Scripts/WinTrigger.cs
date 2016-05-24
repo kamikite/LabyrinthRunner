@@ -4,6 +4,7 @@ using System.Collections;
 public class WinTrigger : MonoBehaviour {
     private GuiManager guiManager;
     private bool waiting;
+    private EndSceneManager end;
     IEnumerator WaitingToSwitch()
     {
         while (waiting)
@@ -11,6 +12,7 @@ public class WinTrigger : MonoBehaviour {
             yield return new WaitForSeconds(5.0f);
             waiting = false;
         }
+        Application.LoadLevel(1);
     }
 
     void OnTriggerEnter(Collider col)
@@ -20,7 +22,8 @@ public class WinTrigger : MonoBehaviour {
             guiManager.winText.text = "YOU WON!";
             StartCoroutine(WaitingToSwitch());
             Debug.Log("You won!");
-            Application.LoadLevel(1);
+         
+            
         }
 
     }
